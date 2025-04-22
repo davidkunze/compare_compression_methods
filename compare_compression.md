@@ -117,7 +117,7 @@ Input data:
 | LERC_DEFLATE               |                     | 951.24 ± 16.29 | 69.58 ± 1.07  | 26.32 ± 0.39 | 3.75 ± 0.15 |
 | LERC_ZSTD                  |                     | 955.01 ± 16.12 | 69.86 ± 1.06  | 19.31 ± 0.23 | 2.45 ± 0.08 |
 
-
+Script was created with help of ChatGPT and was refined afterwards
 ```python
 import os
 import glob
