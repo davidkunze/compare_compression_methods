@@ -1,7 +1,6 @@
 # Comparison of DEFLATE and ZSTD
 
-Since DEFLATE and ZSTD seem to deliver similar results
-
+Since DEFLATE and ZSTD (see compare_compression) deliver similar results in terms of compression rate, compression time (write time) and decompression time (read time), both methods are tested with a larger number of samples. The uncompressed test tiles come from 17 different aerial photography flights and differ in spatial resolution, tile size and input format (.tif, .img)
 
 
 
