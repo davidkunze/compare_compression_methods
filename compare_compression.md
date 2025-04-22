@@ -208,7 +208,7 @@ def compress_raster(input_file, output_file, compression=None, predictor=None, l
         subprocess.run(command, shell=True, check=True)
         return round(time.time() - start_time, 2)
     except subprocess.CalledProcessError:
-        print(f"❌ Error compressing {input_file} with {compression if compression else 'NO COMPRESSION'}")
+        print(f" Error compressing {input_file} with {compression if compression else 'NO COMPRESSION'}")
         return None
 
 # Store results for markdown output
@@ -269,7 +269,7 @@ for input_raster in input_rasters:
                 print(f"Processing: {compression} with Level {level}")
                 cog_write_time = compress_raster(input_raster, cog_output_file, compression, predictor, level, quality)
                 if cog_write_time is None:
-                    print(f"❌ Skipping {compression} with Level {level} due to failure.")
+                    print(f" Skipping {compression} with Level {level} due to failure.")
                     continue
 
                 cog_read_time = measure_read_time(cog_output_file)
@@ -303,7 +303,7 @@ for input_raster in input_rasters:
                 print(f"Processing: {compression} with Level {level} and No Predictor")
                 cog_write_time = compress_raster(input_raster, cog_output_file, compression, None, level, quality)
                 if cog_write_time is None:
-                    print(f"❌ Skipping {compression} with Level {level} and No Predictor due to failure.")
+                    print(f" Skipping {compression} with Level {level} and No Predictor due to failure.")
                     continue
 
                 cog_read_time = measure_read_time(cog_output_file)
@@ -333,7 +333,7 @@ for input_raster in input_rasters:
                 print(f"Processing: {compression} with Level {level} and Predictor 2")
                 cog_write_time = compress_raster(input_raster, cog_output_file, compression, 2, level, quality)
                 if cog_write_time is None:
-                    print(f"❌ Skipping {compression} with Level {level} and Predictor 2 due to failure.")
+                    print(f" Skipping {compression} with Level {level} and Predictor 2 due to failure.")
                     continue
 
                 cog_read_time = measure_read_time(cog_output_file)
