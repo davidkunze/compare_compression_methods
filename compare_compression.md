@@ -132,7 +132,7 @@ output_folder = r'D:\Test\test_compression_2\results\8bit'  # Output directory f
 
 
 # Scan for input raster files
-input_rasters = glob.glob(os.path.join(input_folder, '***.tif'))
+input_rasters = glob.glob(os.path.join(input_folder, '*.tif'))
 
 # Output format
 output_format = 'GTiff'  # Output format for gdal_translate, shoose between 'GTiff' or 'COG'
