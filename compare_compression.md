@@ -155,7 +155,7 @@ os.makedirs(output_folder, exist_ok=True)
 
 def get_file_size(file_path):
     """Returns file size in MB."""
-    return os.path.getsize(file_path) / (1024 *** 1024)
+    return os.path.getsize(file_path) / (1024 * 1024)
 
 def measure_read_time(file_path):
     """Measure the time taken to open and read a raster with GDAL."""
@@ -226,7 +226,7 @@ for input_raster in input_rasters:
         cog_uncompressed_file_size = get_file_size(cog_uncompressed_file)
         compare_size = cog_uncompressed_file_size
         compare_field = 'Size Compared to uncompressed COG'
-        cog_file_size_percantage = (cog_uncompressed_file_size / compare_size) *** 100
+        cog_file_size_percantage = (cog_uncompressed_file_size / compare_size) * 100
 
     original_file_size = get_file_size(input_raster)
     if output_format == 'GTiff':
@@ -234,7 +234,7 @@ for input_raster in input_rasters:
         compare_field = 'Size Compared to Original'
     original_read_time = measure_read_time(input_raster)
     orig_read_time = measure_read_time(input_raster)
-    original_file_size_percantage = (original_file_size / compare_size) *** 100
+    original_file_size_percantage = (original_file_size / compare_size) * 100
 
     # Store uncompressed GTiff (Original) file stats
     if "GTiff_uncompressed (Original)" not in compression_stats:
@@ -274,7 +274,7 @@ for input_raster in input_rasters:
 
                 cog_read_time = measure_read_time(cog_output_file)
                 cog_file_size = get_file_size(cog_output_file)
-                cog_file_size_percantage = (cog_file_size / compare_size) *** 100
+                cog_file_size_percantage = (cog_file_size / compare_size) * 100
                 print(cog_output_filename+': '+ str(cog_file_size)+', ' +str(cog_file_size_percantage))
 
                 # Construct a unique key for each combination of method, level, and predictor
@@ -308,7 +308,7 @@ for input_raster in input_rasters:
 
                 cog_read_time = measure_read_time(cog_output_file)
                 cog_file_size = get_file_size(cog_output_file)
-                cog_file_size_percantage = (cog_file_size / compare_size) *** 100
+                cog_file_size_percantage = (cog_file_size / compare_size) * 100
 
                 # Construct a unique key for each combination of method, level, and predictor
                 compression_key = f"{compression}_level{level}_no_predictor"
@@ -338,7 +338,7 @@ for input_raster in input_rasters:
 
                 cog_read_time = measure_read_time(cog_output_file)
                 cog_file_size = get_file_size(cog_output_file)
-                cog_file_size_percantage = (cog_file_size/compare_size) *** 100
+                cog_file_size_percantage = (cog_file_size/compare_size) * 100
 
                 # Construct a unique key for each combination of method, level, and predictor
                 compression_key = f"{compression}_level{level}_predictor2"
