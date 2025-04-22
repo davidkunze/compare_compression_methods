@@ -1,9 +1,6 @@
 # Comparison of DEFLATE and ZSTD
 
-Since DEFLATE and ZSTD (see [Compare_Compression.md](https://github.com/davidkunze/compare_compression_methods/blob/main/compare_compression.md)) deliver similar results in terms of compression rate, compression time (write time) and decompression time (read time), both methods are tested with a larger number of samples. The uncompressed test tiles come from 17 different aerial photography flights and differ in spatial resolution, tile size and input format (.tif, .img)
-
-
-
+Since DEFLATE and ZSTD deliver similar results in terms of compression rate, compression/write time and decompression/read time (see [Compare_Compression.md](https://github.com/davidkunze/compare_compression_methods/blob/main/compare_compression.md)), both methods are to be tested with a larger number of samples. The test is performed with uncompressed tiles from 17 different aerial image flights, differing in spatial resolution, tile size and input format (.tif, .img).
 
 ```python
 import os
