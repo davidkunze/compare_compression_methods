@@ -2,6 +2,19 @@
 
 Since DEFLATE and ZSTD deliver similar results in terms of compression rate, compression/write time and decompression/read time (see [Compare_Compression.md](https://github.com/davidkunze/compare_compression_methods/blob/main/compare_compression.md)), both methods are to be tested with a larger number of samples. The test is performed with uncompressed tiles from 15 different aerial image flights, differing in bit depth, spatial resolution, tile size and input format (.tif, .img).
 
+**Output format GTiff**
+
+| Method                     | Compression Options                | Mean Size (MB) ± StdDev | Size Compared to Original (%) ± StdDev | Mean Write Time (s) ± StdDev | Mean Read Time (s) ± StdDev |
+|----------------------------|------------------------------------|-------------------------|-----------------------------------------------|-----------------------------|----------------------------|
+| GTiff_uncompressed (Original) |                     | 689.85 ± 537.26 | 100.00 ± 0.00  | 0.00 ± 0.00 | 4.30 ± 2.79 |
+| DEFLATE                    | -co ZLEVEL=6        | 510.46 ± 427.11 | 78.92 ± 23.01  | 14.68 ± 12.29 | 2.26 ± 1.40 |
+| DEFLATE                    | -co ZLEVEL=6 -co PREDICTOR=2 | 388.19 ± 334.87 | 60.67 ± 19.47  | 11.90 ± 7.90 | 2.50 ± 1.59 |
+| ZSTD                       | -co ZLEVEL=9        | 527.79 ± 437.88 | 81.18 ± 23.04  | 5.73 ± 3.20 | 1.68 ± 1.40 |
+| ZSTD                       | -co ZLEVEL=9 -co PREDICTOR=2 | 391.38 ± 338.61 | 60.80 ± 19.15  | 13.36 ± 9.34 | 1.84 ± 1.11 |
+
+
+**Output format COG**
+
 | Method                     | Compression Options                | Mean Size (MB) ± StdDev | Size Compared to Original (%) ± StdDev | Mean Write Time (s) ± StdDev | Mean Read Time (s) ± StdDev |
 |----------------------------|------------------------------------|-------------------------|-----------------------------------------------|-----------------------------|----------------------------|
 | GTiff_uncompressed (Original) |                     | 689.85 ± 537.26 | 88.53 ± 44.36  | 0.00 ± 0.00 | 0.56 ± 0.91 |
